@@ -1,5 +1,13 @@
 import random
-kk = random.randint(100,999)
-nk = random.randint(1000,6666)
+k1 = random.randint(0,9)
+k2 = random.randint(0,9)
+k3 = random.randint(0,9)
 
-print(kk, nk)
+n1 = random.randint(0,6)
+n2 = random.randint(0,6)
+n3 = random.randint(0,6)
+n4 = random.randint(0,6)
+
+
+print(f"{k1}{k2}{k3}")
+print(f"{n1}{n2}{n3}{n4}")
