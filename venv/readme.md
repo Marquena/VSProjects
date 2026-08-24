@@ -9,7 +9,7 @@ Python harjoitukset
 
     }
     #Moduuli 3{
-        23.8 done
+        Valmis 24.8, ei tuottanut hankaluuksia
     }
     #Moduuli 4
     #Moduuli 5
