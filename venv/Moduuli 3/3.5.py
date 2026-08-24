@@ -16,5 +16,6 @@ täys = lievfin + naulafin + luotifin
 gram, kilo = math.modf(täys/1000)
 
 print("Kokonaispaino moderneilla mittayksiköillä on: ")
+
 print(f"{kilo:10.0f}", " Kilogrammaa")
 print(f"{gram*1000:10.1f}"," Grammaa")
