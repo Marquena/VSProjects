@@ -1,3 +1,5 @@
+import fun
+
 p_name = input("Mikä on nimesi?\n>>> ")
 p_age = int(input("Kuina vanha olet?\n>>> "))
 
@@ -16,7 +18,7 @@ while menu_lp:
         print("ei viel mitää")
         input(">>> ")
     elif menu_input ==2:
-        print("kyseinen peli on projekti (ja kesken)")
+        fun.tietoja()
         input(">>> ")
     elif menu_input ==3:
         print("huuhaa")
