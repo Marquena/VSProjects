@@ -20,18 +20,37 @@ class auto():
         self.distance += self.currvel*tunti
         return self.distance
 
-autot = []
-for i in range(10):
-    aa = auto(f"ABC-{i+1}",random.randint(100,200),0,0)
-    autot.append(aa)
-lp = True
-while lp:
-    for aa in autot:
-        aa.kiihdytä(random.randint(-10,15))
-        aa.kulje(1)
-    for aa in autot:
-        if aa.distance>10000:
-            lp=False
-            break
-for aa in autot:
-    print(f"{aa.rek}\nMaksiminopeus: {aa.maxvel}\nTämänhetkinen nopeus: {aa.currvel}\nKuljettu Matka: {aa.distance}\n")
+class kilpailu():
+    def __init__(self, nimi, pit):
+        self.nimi = nimi
+        self.pit = pit
+        self.auli = []
+        for i in range(10):
+            aa = auto(f"ABC-{i+1}",random.randint(100,200),0,0)
+            self.auli.append(aa)
+    def tulosta(self):
+        for aa in self.auli:
+            print(f"{aa.rek}\nMaksiminopeus: {aa.maxvel}\nTämänhetkinen nopeus: {aa.currvel}\nKuljettu Matka: {aa.distance}\n")
+        print("\n-------------------------------------")
+    def yh(self):
+            for aa in self.auli:
+                aa.kiihdytä(random.randint(-10,15))
+                aa.kulje(1)
+    def maali(self):
+        lp = True
+        while lp:
+            for i in range(10):
+                if lp== False:
+                    break
+                kilpailu.yh(self)
+                for aa in self.auli:
+                    if aa.distance>self.pit:
+                        lp = False
+                        break
+                i+=1
+                kilpailu.tulosta(self)
+            kilpailu.tulosta(self)
+
+kk = kilpailu("Suuri romuralli",8000)
+kk.maali()
+print(f"Tämä oli "+kk.nimi+", tervetuloa uudestaan")

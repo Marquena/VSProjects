@@ -29,3 +29,6 @@ Python harjoitukset
     #Moduuli 9{
         Valmis 5.9, jouduin käyttämään pari tuntia tehtävän tekemiseen ennenkuin sain sen valmiiksi. Suhteellisen vaikea tehtävä
     }
+    #Moduuli10{
+        Valmis 7.9, kauheeta duunia hyhhyh. Aivot savuaa
+    }
