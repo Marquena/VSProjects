@@ -10,5 +10,5 @@ while x==0:
     num = float(num)
     if num<pienin or pienin <=0:
         pienin = num
-    elif num > suurin or suurin >=0:
+    elif num > suurin:
         suurin = num

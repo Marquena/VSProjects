@@ -32,3 +32,9 @@ Python harjoitukset
     #Moduuli10{
         Valmis 7.9, kauheeta duunia hyhhyh. Aivot savuaa
     }
+    #Moduuli11{
+        Valmis 18.9, Selkeetä selkeetä
+    }
+    #Moduuli12{
+        
+    }
