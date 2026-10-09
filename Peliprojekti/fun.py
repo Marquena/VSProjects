@@ -18,8 +18,16 @@ def exitgame():
     with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","w") as save:
         json.dump(save_data,save)
     exit()
+def updatedata():
+    #Päivittää obj pelaajan tiedot
+    with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r")as save:
+        ac = json.load(save)
+    pel.name = ac["pelaaja"]
+    pel.age = ac["ika"]
+    pel.phase = ac["phase"]
+    pel.lvl = ac["lvl"]
+    pel.inv = ac["inv"]
 def savegame():
-    #tallentaa pelin
     save_data = {
         "pelaaja": pel.name,
         "ika":pel.age,
@@ -45,24 +53,17 @@ def removefrominv(item):
         a+=1
 def search(item):
     #etsii itemin inventorysta True/False
+    x = 0
     with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r")as save:
         ac = json.load(save)
     for i in ac["inv"]:
-        if i["nimi"] == item:
+        if i["nimi"] != item:
+            x=False
+        else:
             x=True
             break
-        else:
-            x=False
     return x
-def updatedata():
-    #Päivittää obj pelaajan tiedot
-    with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r")as save:
-        ac = json.load(save)
-    pel.name = ac("nimi")
-    pel.age = ac("ika")
-    pel.phase = ac("phase")
-    pel.lvl = ac("lvl")
-    pel.inv = ac("inv")
+
 def menu():
 
     pel = ini.pelaaja
@@ -86,6 +87,7 @@ def menu():
         menu_input = int(input(">>> "))
         if menu_input == 1:
             print("peli alkaa")
+            savegame()
             input(">>> ")
             break
         elif menu_input ==2:
@@ -127,11 +129,11 @@ def l1(phase):
                 input(">>> ")
                 exitgame()
             elif ss==2:
+                savegame()
                 print("Vastaasi tulee kauppias joka yrittää myydä sinulle lapiotaan. Ostatko lapion?")
-                ac = int(input("1. Kyllä\n2. Ei"))
+                ac = int(input("1. Kyllä\n2. Ei\n>>> "))
                 if ac == 1:
-                    s = search("lapio")
-                    if s:
+                    if search("lapio"):
                         print("sinulla on nyt kaksi lapiota")
                         input(">>> ")
                         print("lähtiessäsi pois kauppiaan luota, kaadut kahden lapion painosta, ja lyöt pääsi kiveen\n Menehdyit")
@@ -139,7 +141,10 @@ def l1(phase):
                         exitgame()
                     else:
                         pel.inv.append(ini.lapio)
+                        print("sait hienon lapion")
+                        input(">>> ")
                 else:
+                    savegame()
                     print("Kieltäydyt, ja lähdet takaisin, ja kohti länttä.")
                     input(">>> ")
                     print("Kävelet pitkin pimeää metsäpolkua")
@@ -147,11 +152,13 @@ def l1(phase):
             elif ss==3:
                 print("Kävelet pitkin pimeää metsäpolkua")
                 input(">>> ")
-            ph+=1
+            ph=0
             pel.phase = ph
+            pel.lvl = 1
+            savegame()
             break
+            
 def l2(phase):
-    updatedata()
     ph = phase
     while True:
         if ph==0:

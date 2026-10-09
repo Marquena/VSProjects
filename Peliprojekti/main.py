@@ -8,6 +8,7 @@ with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r") as sav
 if ss in data["pelaaja"]:
     print("hahmo löytyi")
     input(">>> ")
+    fun.updatedata()
 else:
     fun.menu()
 
@@ -22,6 +23,5 @@ inv = data["inv"]
 
 while True:
     #peli pyörii niin kauan että ohjelma suljetaan, joko häviöstä tai voitosta
-    fun.peli(lvl,phase)
-    lvl+=1
-    phase = 0
+    fun.peli(fun.pel.lvl,fun.pel.phase)
+    fun.savegame()
