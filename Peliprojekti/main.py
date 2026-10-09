@@ -7,20 +7,21 @@ with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r") as sav
     data = json.load(save)
 if ss in data["pelaaja"]:
     print("hahmo löytyi")
+    input(">>> ")
 else:
     fun.menu()
 
 with open("C:/Users/milop/.vscode/VSProjects/Peliprojekti/save.json","r") as save:
     data = json.load(save)
-    
+
 ikä = data["ika"]
 nimi = data["pelaaja"]
 phase = data["phase"]
 lvl = data["lvl"]
 inv = data["inv"]
 
-fun.peli(data["lvl"],data["phase"])
-
-print("voitit pelin yahhuuuu")
-
-
+while True:
+    #peli pyörii niin kauan että ohjelma suljetaan, joko häviöstä tai voitosta
+    fun.peli(lvl,phase)
+    lvl+=1
+    phase = 0
