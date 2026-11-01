@@ -1,5 +1,5 @@
 import json
-import ini
+import Ohj1.Peliprojekti.ini as ini
 
 pel = ini.pelaaja
 def tietoja():

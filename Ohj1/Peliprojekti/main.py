@@ -1,5 +1,5 @@
-import fun
-import ini
+import Ohj1.Peliprojekti.fun as fun
+import Ohj1.Peliprojekti.ini as ini
 import json
 
 ss = input("Jos aikaisempia pelikertoja, syötä hahmon nimi\n>>> ")
