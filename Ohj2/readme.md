@@ -7,3 +7,6 @@ HTML-CSS tehtävä{
 Javascript Mod1+2{
     Tein 10 pisteen edestä tehtäviä, ei tuottanut suuria haasteita.
 }
+Javascript Mod3{
+    10 pisteen edestä taas. Eipaha
+}
