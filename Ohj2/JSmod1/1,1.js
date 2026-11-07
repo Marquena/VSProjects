@@ -49,4 +49,5 @@ function hyppy(){
         verdict = "Ei ole hyppyvuosi";
     }
     document.getElementById("demo").innerHTML = verdict;
+
 }
